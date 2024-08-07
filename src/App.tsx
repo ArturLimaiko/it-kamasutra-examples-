@@ -32,7 +32,7 @@ function Star() {
 function Accordion() {
     return (
         <div>
-            <Accordion/>
+            <AccordionTitle/>
             <AccordionBody/>
         </div>
     )
