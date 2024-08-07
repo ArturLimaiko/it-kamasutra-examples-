@@ -2,7 +2,6 @@ import React from 'react';
 import {Rating} from './Rating';
 import {Accordion} from "./Accordion";
 
-
 function App() {
     return (
         <div className="App">
@@ -15,14 +14,19 @@ function App() {
             <Rating value={5}/>
 
             <AppTitle title='Article 2'/>
-            <Accordion title='Accordion Title'/>
+            <Accordion titleValue='Accordion Title Collapsed On' collapsed={true}/>
+            <Accordion titleValue='Accordion Title Collapsed Off' collapsed={false}/>
         </div>
     );
 }
 
-function AppTitle(props: any) {
+type AppTitleType = {
+    title: string
+}
+
+function AppTitle({title}: AppTitleType) {
     return (
-        <h1>{props.title}</h1>
+        <h1>{title}</h1>
     )
 }
 
