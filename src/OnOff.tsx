@@ -1,49 +1,23 @@
-// import React from 'react';
-// import './OnOff.css';
-//
-// export const OnOff = () => {
-//  let [isOn,setIsOn] = useState(false);
-//
-//     const isGreenClick = () => {
-//
-//     }
-//
-//     const isGreenClick = () => {
-//
-//     }
-//
-//
-//     return (
-//         <div className={'wrap'}>
-//             <div >green</div>
-//             <div>red</div>
-//             <button onClick={()=> {}}> Click me! </button>
-//         </div>
-//     );
-// };
-
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './OnOff.css';
 
 export const OnOff = () => {
-    const [isOn, setIsOn] = useState(false); // false means red, true means green
+    let [isOn, setIsOn] = useState(false);
 
-    const onGreenClick = () => {
-        setIsOn(true);
+    const isOnClick = () => {
+        setIsOn(true)
     }
 
-    const onRedClick = () => {
-        setIsOn(false);
+    const isOffClick = () => {
+        setIsOn(false)
     }
 
     return (
-        <div className='wrap'>
-            <div className={`green ${isOn ? 'active' : ''}`} onClick={onGreenClick}>green</div>
-            <div className={`red ${!isOn ? 'active' : ''}`} onClick={onRedClick}>red</div>
-            <button onClick={() => alert(isOn ? 'Green is ON' : 'Red is ON')}>
-                Click me!
+        <div className={'wrap'}>
+            <div className={`green ${isOn ? 'active' : ''}`} onClick={isOnClick}>ON</div>
+            <div className={`red ${!isOn ? 'active' : ''}`} onClick={isOffClick}>OFF</div>
+            <button onClick={() =>  alert(isOn ? 'Is On!' : 'Is Off!')}> Click me!
             </button>
         </div>
     );
 };
-
