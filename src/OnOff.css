@@ -1,0 +1,62 @@
+/*.wrap {*/
+/*    display: flex;*/
+/*    gap : 20px;*/
+/*}*/
+
+/*.On,*/
+/*.Off {*/
+/*    display: block;*/
+/*    width: 30px;*/
+/*    border-radius: 50%;*/
+/*    padding: 20px;*/
+/*    margin: 0;*/
+/*    border: 1px solid transparent;*/
+/*}*/
+
+/*.On {*/
+/*    background-color: green;*/
+/*}*/
+
+/*.Off {*/
+/*    background-color: red;*/
+/*}*/
+
+/*.switchButton {*/
+/*    display: block;*/
+/*    padding: 20px 10px;*/
+/*    width: 100px;*/
+/*    border:1px solid gray;*/
+/*    border-radius: 10px;*/
+/*    background-color: transparent;*/
+/*}*/
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.green, .red {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+.green {
+    background-color: lightgray; /* Default background */
+}
+
+.red {
+    background-color: lightgray; /* Default background */
+}
+
+.active.green {
+    background-color: green; /* Active state for green */
+    color: white;
+}
+
+.active.red {
+    background-color: red; /* Active state for red */
+    color: white;
+}
