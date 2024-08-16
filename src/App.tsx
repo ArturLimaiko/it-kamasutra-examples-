@@ -2,6 +2,9 @@ import React from 'react';
 import {Rating} from './Rating';
 import {Accordion} from "./Accordion";
 import {OnOff} from "./OnOff";
+import {UncontrolledAccordion} from "./UncontrolledAccordion";
+import {UncontrolledRating} from "./UncontrolledRating";
+import './App.css';
 
 function App() {
     return (
@@ -20,6 +23,12 @@ function App() {
             <hr/>
             <AppTitle title='ONOFF'/>
             <OnOff/>
+            <hr/>
+            <AppTitle title=' UNCONTROLLED ACCORDION'/>
+            <UncontrolledAccordion titleValue={'ACCORDION TITLE'}/>
+            <hr/>
+            <AppTitle title='UncontrolledRating'/>
+            <UncontrolledRating/>
         </div>
     );
 }
