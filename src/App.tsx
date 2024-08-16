@@ -30,7 +30,7 @@ type AppTitleType = {
 
 function AppTitle({title}: AppTitleType) {
     return (
-        <h1>{title}</h1>
+        <h1 style={{display: 'flex',justifyContent: 'center'}}>{title}</h1>
     )
 }
 
