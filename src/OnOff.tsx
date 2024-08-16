@@ -32,18 +32,19 @@ export const OnOff = () => {
     const wrap = {
         display: 'flex',
         gap: '20px',
-        justifyContent:'center'
+        justifyContent: 'center'
     }
 
     return (
-        <div style = {wrap}>
+        <div style={wrap}>
             <div style={onStyle} onClick={() => setOn(true)}>on</div>
-            <div style={offStyle}  onClick={()=> setOn(false)}>off</div>
+            <div style={offStyle} onClick={() => setOn(false)}>off</div>
             <div style={switchButton}></div>
         </div>
     );
 };
 
+//посложнее вариант
 
 // import React, {useState} from 'react';
 // import './OnOff.css';
