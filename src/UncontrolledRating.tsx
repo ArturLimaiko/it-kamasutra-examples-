@@ -1,9 +1,8 @@
 import React, {useState} from "react";
 
-export type UncontrolledRatingType = {}
 
 export function UncontrolledRating() {
-    const [value, setValue] = useState<UncontrolledRatingType>(0)
+    const [value, setValue] = useState(0)
 
     return (
         <div>
