@@ -9,8 +9,7 @@ export function UncontrolledAccordion({titleValue}: UncontrolledAccordionType) {
 
     return (
         <div>
-            <div><AccordionTitle title={titleValue}/>
-                <button onClick={()=> setCollapsed(!collapsed)}>TOGGLE</button>
+            <div ><AccordionTitle title={titleValue} onClick={()=> setCollapsed(!collapsed)}/>
                 {!collapsed && <div><AccordionBody/></div>}
             </div>
         </div>
@@ -19,11 +18,12 @@ export function UncontrolledAccordion({titleValue}: UncontrolledAccordionType) {
 
 type AccordionTitleType = {
     title: string
+    onClick: () => void
 }
 
-function AccordionTitle({title}: AccordionTitleType) {
+function AccordionTitle({title,onClick}: AccordionTitleType) {
     return (
-        <h2>{title}</h2>
+        <h2 style={{cursor:'pointer'}} onClick={()=> {onClick()}}>{title}</h2>
     )
 }
 
