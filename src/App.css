@@ -1,4 +1,6 @@
 .App {
     width: 800px;
     margin: 20px auto;
+    background-color: burlywood;
+    text-align: center;
 }

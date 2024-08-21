@@ -43,7 +43,7 @@ export const OnOff = ({switchOn,onChange} : OnOffType) => {
         <div style={wrap}>
             <div style={onStyle} onClick={() => onChange(true)}>on</div>
             <div style={offStyle} onClick={() => onChange(false)}>off</div>
-            <div style={switchButton}> Click! </div>
+            <div style={switchButton}> {switchOn.toString() } </div>
         </div>
     );
 };
