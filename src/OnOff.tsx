@@ -1,7 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-export const OnOff = () => {
-    const [on, setOn] = useState(false);
+export type OnOffType = {
+    switchOn: boolean
+    onChange: (on: boolean) => void
+}
+
+export const OnOff = ({switchOn,onChange} : OnOffType) => {
 
     const onStyle = {
         display: 'block',
@@ -9,7 +13,7 @@ export const OnOff = () => {
         padding: '10px 30px',
         margin: '0',
         border: '1px solid gray',
-        backgroundColor: on ? 'green' : 'white',
+        backgroundColor: switchOn ? 'green' : 'white',
         color: 'black'
 
     }
@@ -19,7 +23,7 @@ export const OnOff = () => {
         padding: '10px 30px',
         margin: '0',
         border: '1px solid gray',
-        backgroundColor: on ? 'white' : 'red',
+        backgroundColor: switchOn ? 'white' : 'red',
         color: 'black'
     }
     const switchButton = {
@@ -27,7 +31,7 @@ export const OnOff = () => {
         padding: '15px',
         border: '1px solid gray',
         borderRadius: '30px',
-        backgroundColor: on ? 'green' : 'red'
+        backgroundColor: switchOn ? 'green' : 'red'
     }
     const wrap = {
         display: 'flex',
@@ -37,9 +41,9 @@ export const OnOff = () => {
 
     return (
         <div style={wrap}>
-            <div style={onStyle} onClick={() => setOn(true)}>on</div>
-            <div style={offStyle} onClick={() => setOn(false)}>off</div>
-            <div style={switchButton}>{setOn.toString()}</div>
+            <div style={onStyle} onClick={() => onChange(true)}>on</div>
+            <div style={offStyle} onClick={() => onChange(false)}>off</div>
+            <div style={switchButton}> Click! </div>
         </div>
     );
 };
