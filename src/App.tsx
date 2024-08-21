@@ -8,16 +8,17 @@ import './App.css';
 
 function App() {
 
-    let [ratingValue,setRatingValue] = useState<RatingValueType>(1)
-
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(1)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     return (
         <div className="App">
             <AppTitle title='RATING'/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <hr/>
             <AppTitle title='ACCORDION'/>
-            <Accordion titleValue='Accordion Title Collapsed On' collapsed={true}/>
-            <Accordion titleValue='Accordion Title Collapsed Off' collapsed={false}/>
+            <Accordion titleValue='Accordion Title Collapsed'
+                       collapsed={accordionCollapsed}
+                       onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
             <hr/>
             <AppTitle title='ONOFF'/>
             <OnOff/>
@@ -37,7 +38,7 @@ type AppTitleType = {
 
 function AppTitle({title}: AppTitleType) {
     return (
-        <h1 style={{display: 'flex',justifyContent: 'center'}}>{title}</h1>
+        <h1 style={{display: 'flex', justifyContent: 'center'}}>{title}</h1>
     )
 }
 

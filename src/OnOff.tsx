@@ -39,7 +39,7 @@ export const OnOff = () => {
         <div style={wrap}>
             <div style={onStyle} onClick={() => setOn(true)}>on</div>
             <div style={offStyle} onClick={() => setOn(false)}>off</div>
-            <div style={switchButton}></div>
+            <div style={switchButton}>{setOn.toString()}</div>
         </div>
     );
 };
