@@ -21,7 +21,7 @@ type AccordionTitleType = {
 
 function AccordionTitle({title,onChange}: AccordionTitleType) {
     return (
-        <h2 style={{cursor: 'pointer'}} onClick={onChange}>{title}</h2>
+        <h2 style={{cursor: 'pointer'}} onClick={(event) => onChange()}>{title}</h2>
     )
 }
 
