@@ -1,0 +1,33 @@
+import type {Meta} from '@storybook/react';
+
+import {Accordion} from "./Accordion";
+import React, {useState} from "react";
+
+const meta: Meta<typeof Accordion> = {
+    component: Accordion,
+}
+
+export default meta
+
+export const CollapsedAccordion = () => {
+    return <Accordion titleValue='Accordion collapsed'
+                      collapsed={true}
+                      onChange={() => {
+                      }}/>
+}
+
+export const openedAccordion = () => {
+    return <Accordion titleValue='Accordion opened'
+                      collapsed={false}
+                      onChange={() => {
+                      }}/>
+}
+
+export const AccordionDemo = () => {
+    const [collapsed, setCollapsed] = useState(false)
+    return <Accordion titleValue='Accordion'
+                      collapsed={collapsed}
+                      onChange={() => {
+                          setCollapsed(!collapsed)
+                      }}/>
+}
