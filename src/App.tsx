@@ -5,6 +5,7 @@ import {OnOff} from "./OnOff";
 import {UncontrolledAccordion} from "./UncontrolledAccordion";
 import {UncontrolledRating} from "./UncontrolledRating";
 import './App.css';
+import {UncontrolledOnOff} from "./UncontrolledOnOff";
 
 function App() {
 
@@ -20,16 +21,21 @@ function App() {
             <AppTitle title='ACCORDION'/>
             <Accordion titleValue='Accordion Title Collapsed'
                        collapsed={accordionCollapsed}
-                       onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
+                       onChange={() => {
+                           setAccordionCollapsed(!accordionCollapsed)
+                       }}/>
             <hr/>
             <AppTitle title='ONOFF'/>
-            <OnOff switchOn={switchOn} onChange = {setSwitchOn}/>
+            <OnOff switchOn={switchOn} onChange={setSwitchOn}/>
             <hr/>
             <AppTitle title=' UNCONTROLLED ACCORDION'/>
             <UncontrolledAccordion titleValue={'ACCORDION TITLE'}/>
             <hr/>
             <AppTitle title='UncontrolledRating'/>
             <UncontrolledRating/>
+            <hr/>
+            <AppTitle title='Uncontrolled OnOff'/>
+            <UncontrolledOnOff />
         </div>
     );
 }
