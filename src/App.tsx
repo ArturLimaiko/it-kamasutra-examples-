@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import {Rating, RatingValueType} from './Rating';
 import {Accordion} from "./Accordion";
-import {OnOff} from "./OnOff";
+// import {OnOff} from "./OnOff";
 import {UncontrolledAccordion} from "./UncontrolledAccordion";
 import {UncontrolledRating} from "./UncontrolledRating";
 import './App.css';
+import {UncontrolledOnOff} from "./UncontrolledOnOff";
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
                        }}/>
             <hr/>
             <AppTitle title='ONOFF'/>
-            <OnOff switchOn={switchOn} onChange={setSwitchOn}/>
+            {/*<OnOff switchOn={switchOn} onChange={setSwitchOn}/>*/}
             <hr/>
             <AppTitle title=' UNCONTROLLED ACCORDION'/>
             <UncontrolledAccordion titleValue={'ACCORDION TITLE'}/>
@@ -34,6 +35,7 @@ function App() {
             <UncontrolledRating/>
             <hr/>
             <AppTitle title='Uncontrolled OnOff'/>
+            <UncontrolledOnOff onChange={setSwitchOn}/>{switchOn.toString()}
         </div>
     );
 }
