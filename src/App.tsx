@@ -5,7 +5,6 @@ import {OnOff} from "./OnOff";
 import {UncontrolledAccordion} from "./UncontrolledAccordion";
 import {UncontrolledRating} from "./UncontrolledRating";
 import './App.css';
-import {UncontrolledOnOff} from "./UncontrolledOnOff";
 
 function App() {
 
@@ -35,7 +34,6 @@ function App() {
             <UncontrolledRating/>
             <hr/>
             <AppTitle title='Uncontrolled OnOff'/>
-            <UncontrolledOnOff />
         </div>
     );
 }
