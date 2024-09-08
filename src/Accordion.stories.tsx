@@ -6,21 +6,11 @@ import {Accordion} from "./Accordion";
 import React, {useState} from "react";
 
 export default {
+    title: 'Accordion',
     component: Accordion,
 }
 
-//Димыч сказал пока что не пользуемся
-// export const FirstStory: StoryObj<typeof Accordion> = {
-//     args: {
-//         titleValue: "First Story",
-//         collapsed: true,
-//         onChange: () => {
-//             console.log('on change')
-//         },
-//     }
-// }
-
-const onChangeHandler = () => action('onChange')
+const onChangeHandler = action('onChange')
 
 export const CollapsedAccordion = () => {
     return <Accordion titleValue='Accordion collapsed'
@@ -28,11 +18,10 @@ export const CollapsedAccordion = () => {
                       onChange={onChangeHandler}/>
 }
 
-export const openedAccordion = () => {
+export const OpenedAccordion = () => {
     return <Accordion titleValue='Accordion opened'
                       collapsed={false}
-                      onChange={() => {
-                      }}/>
+                      onChange={onChangeHandler}/>
 }
 
 export const AccordionDemo = () => {
@@ -43,3 +32,20 @@ export const AccordionDemo = () => {
                           setCollapsed(!collapsed)
                       }}/>
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
