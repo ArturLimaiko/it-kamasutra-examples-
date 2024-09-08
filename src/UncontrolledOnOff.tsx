@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 
 export type UncontrolledOnOffType = {
     onChange: (on: boolean) => void;
+    defaultOn? : boolean;
 }
 
-export const UncontrolledOnOff = ({onChange}: UncontrolledOnOffType) => {
-    const [onOff, setOnOff] = useState<boolean>(true)
+export const UncontrolledOnOff = ({onChange,defaultOn}: UncontrolledOnOffType) => {
+    const [onOff, setOnOff] = useState<boolean>(defaultOn? defaultOn : false);
 
     const onStyle = {
         display: 'block',
