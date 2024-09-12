@@ -32,7 +32,7 @@ function App() {
             <UncontrolledAccordion titleValue={'ACCORDION TITLE'}/>
             <hr/>
             <AppTitle title='UncontrolledRating'/>
-            <UncontrolledRating/>
+            <UncontrolledRating onChange={val=>setRatingValue(val)} defaultValue={3}/>
             <hr/>
             <AppTitle title='Uncontrolled OnOff'/>
             <UncontrolledOnOff onChange={setSwitchOn}/>{switchOn.toString()}
