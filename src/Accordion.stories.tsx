@@ -11,27 +11,65 @@ export default {
 }
 
 const onChangeHandler = action('onChange')
+const onClickCallback = action('some item was clicked');
 
 export const CollapsedAccordion = () => {
     return <Accordion titleValue='Accordion collapsed'
                       collapsed={true}
-                      onChange={onChangeHandler}/>
+                      onChange={onChangeHandler}
+                      items={[]}
+                      onClick={onClickCallback}
+    />
 }
 
 export const OpenedAccordion = () => {
     return <Accordion titleValue='Accordion opened'
                       collapsed={false}
-                      onChange={onChangeHandler}/>
+                      onClick={onClickCallback}
+                      onChange={onChangeHandler} items={[{title: 'Art', value: 2}, {title:'Tonya',value: 3}, {title: 'Gena', value: 4}, {title:'Tamara' , value: 5}]}/>
 }
 
 export const AccordionDemo = () => {
     const [collapsed, setCollapsed] = useState(false)
     return <Accordion titleValue='Accordion'
                       collapsed={collapsed}
-                      onChange={() => {
-                          setCollapsed(!collapsed)
-                      }}/>
+                      onClick={(value) => {alert(`users with ID ${value} should be happy`)}}
+                      // onClick={onClickCallback}
+                      onChange={() => {setCollapsed(!collapsed)}}
+                      items={[
+                          {title: 'Art', value: 2},
+                          {title:'Tonya',value: 3},
+                          {title: 'Gena', value: 4},
+                          {title:'Tamara' , value: 5}]
+                      }/>
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -21,9 +21,14 @@ function App() {
             <AppTitle title='ACCORDION'/>
             <Accordion titleValue='Accordion Title Collapsed'
                        collapsed={accordionCollapsed}
-                       onChange={() => {
-                           setAccordionCollapsed(!accordionCollapsed)
-                       }}/>
+                       onClick={()=>{}}
+                       onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}
+                       items={[
+                           {title: 'Art', value: 2},
+                           {title:'Tonya',value: 3},
+                           {title: 'Gena', value: 4},
+                           {title:'Tamara' , value: 5}
+                       ]}/>
             <hr/>
             <AppTitle title='ONOFF'/>
             {/*<OnOff switchOn={switchOn} onChange={setSwitchOn}/>*/}
@@ -32,7 +37,7 @@ function App() {
             <UncontrolledAccordion titleValue={'ACCORDION TITLE'}/>
             <hr/>
             <AppTitle title='UncontrolledRating'/>
-            <UncontrolledRating onChange={val=>setRatingValue(val)} defaultValue={3}/>
+            <UncontrolledRating onChange={val => setRatingValue(val)} defaultValue={3}/>
             <hr/>
             <AppTitle title='Uncontrolled OnOff'/>
             <UncontrolledOnOff onChange={setSwitchOn}/>{switchOn.toString()}
