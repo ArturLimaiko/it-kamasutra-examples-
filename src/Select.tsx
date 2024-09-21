@@ -1,23 +1,30 @@
 import React from 'react';
-import {RatingValueType, Star} from "./Rating";
 
 
-type ItemType ={
-    title:string
+type ItemType = {
+    title: string
     value: any
 }
 
 export type SelectType = {
-    value: any
+    value?: any
     onChange: (value: any) => void
     items: ItemType[]
 }
 
-export const Select = ({value,onChange,items}:SelectType) => {
+export const Select = ({value, onChange, items}: SelectType) => {
+
+    const selectedItem = items.find(i => i.value === value);
+
     return (
         <div>
-            {/*<div>{пробежаться по всем items мапом - найти в них тот  айтемс в котором совпадает  value и отобразить title нужного items через find}</div>*/}
-            {/*{items.map(i => <div>{i.title}</div>)}*/}
+            <select>
+                <option value="">Item 1</option>
+                <option value="">Item 2</option>
+                <option value="">Item 3</option>
+            </select>
+            <h3>{selectedItem && selectedItem.title}</h3>
+            {items.map(i => <div key={i.value}>{i.title}</div>)}
         </div>
     );
 };
