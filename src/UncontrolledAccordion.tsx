@@ -1,8 +1,12 @@
 import React, {useReducer} from "react";
-import {reducer, TOGGLE_CONSTANT} from "./Reducer";
+import {reducer, TOGGLE_COLLAPSED} from "./Reducer";
 
 type UncontrolledAccordionType = {
     titleValue: string;
+}
+type AccordionTitleType = {
+    title: string
+    onClick: () => void
 }
 
 export function UncontrolledAccordion({titleValue}: UncontrolledAccordionType) {
@@ -13,16 +17,11 @@ export function UncontrolledAccordion({titleValue}: UncontrolledAccordionType) {
             <div >
                 {/*<AccordionTitle title={titleValue} onClick={()=> setCollapsed(!collapsed)}/>*/}
                 {/*в dispatch отправили экшн - при нажатии мы диспатчим инструкцию*/}
-                <AccordionTitle title={titleValue} onClick={()=> dispatch({type: TOGGLE_CONSTANT})}/>
+                <AccordionTitle title={titleValue} onClick={()=> dispatch({type: TOGGLE_COLLAPSED})}/>
                 {!state.collapsed && <div><AccordionBody/></div>}
             </div>
         </div>
     )
-}
-
-type AccordionTitleType = {
-    title: string
-    onClick: () => void
 }
 
 function AccordionTitle({title,onClick}: AccordionTitleType) {
