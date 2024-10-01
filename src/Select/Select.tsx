@@ -57,7 +57,6 @@ export const Select = ({value, items, onChange}: SelectType) => {
             <div className={styles.select} onKeyUp={onKeyUp}
                  tabIndex={0}
             >
-
                 <span className={styles.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
                 {
                     active &&
@@ -72,12 +71,9 @@ export const Select = ({value, items, onChange}: SelectType) => {
                         >{i.title}</div>)}
                     </div>
                 }
-
             </div>
         </>
-
-    )
-        ;
+    );
 };
 
 
