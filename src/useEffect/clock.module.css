@@ -1,11 +1,3 @@
-.clock {
-
-}
-
-.clock_head {
-
-}
-
 .clock_wrap {
     display: flex;
     border: 1px solid gray;
