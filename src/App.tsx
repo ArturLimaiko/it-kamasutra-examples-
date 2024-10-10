@@ -6,6 +6,7 @@ import {UncontrolledRating} from "./UncontrolledRating/UncontrolledRating";
 import './App.css';
 import {UncontrolledOnOff} from "./UncontrolledOnOff/UncontrolledOnOff";
 import {UncontrolledAccordion} from "./UncontrolledAccordion";
+import {ClockApp} from "./useEffect/clock";
 
 function App() {
 
@@ -15,6 +16,8 @@ function App() {
 
     return (
         <div className="App">
+
+            <ClockApp/>
             <AppTitle title='RATING'/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <hr/>

@@ -1,0 +1,38 @@
+.clock {
+
+}
+
+.clock_head {
+
+}
+
+.clock_wrap {
+    display: flex;
+    border: 1px solid gray;
+    background-color: lightgray;
+    border-radius: 5px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.clock_hours,
+.clock_minutes,
+.clock_seconds {
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    padding: 40px 20px;
+    font-size: 30px;
+    text-shadow: 0 7px 7px black;
+}
+
+.clock_hours {
+    background-color: lightcoral;
+}
+
+.clock_minutes {
+    background-color: lightslategrey;
+}
+
+.clock_seconds {
+    background-color: lightcyan;
+}
