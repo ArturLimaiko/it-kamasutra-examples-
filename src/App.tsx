@@ -6,7 +6,7 @@ import {UncontrolledRating} from "./UncontrolledRating/UncontrolledRating";
 import './App.css';
 import {UncontrolledOnOff} from "./UncontrolledOnOff/UncontrolledOnOff";
 import {UncontrolledAccordion} from "./UncontrolledAccordion";
-import {ClockApp} from "./useEffect/clock";
+import {ClockApp} from "./clock/clock";
 
 function App() {
 
