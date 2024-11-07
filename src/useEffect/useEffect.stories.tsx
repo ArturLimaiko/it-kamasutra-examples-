@@ -44,7 +44,7 @@ export const SetTimeoutExample = () => {
     //все ассинхронные операции должны делать внутри useEffect()
     useEffect(() => {
 
-    //когда меняется counter говорим перезапускай этот эффект (setTimeout) через секунду поменяется
+        //когда меняется counter говорим перезапускай этот эффект (setTimeout) через секунду поменяется
         setTimeout(() => {
             console.log("setTimeout");
             document.title = counter.toString()
@@ -66,15 +66,7 @@ export const SetIntervalExample = () => {
     console.log("SetIntervalExample");
 
     useEffect(() => {
-
-        //тут вообще функция даже не вызывается целиком , setInterval запустился единожды
-        // а setCounter берет из замыкания тот  counter который был в самый 1 раз - а там была 1
-        //и он работает с 1 вызовом функции SetIntervalExample(), в counter сидит 1
-        // и при каждом ТИКЕ берет 1 , а 1 + 1 =2 и отправляет в  state , далее в counter типа 2 он отрисовывает единожды
-        // и useEffect больше не регистрируется тк зависимостей нет, но в counter была единичка и он забирает ее и сетает 2
-        // соответственно и перерисовка не происходит и setInterval берет значение из замыкания , а ему нужно свежее значение -
-        // а мы можем передать преобразователь которая говорит не конкретное значение на тебе а КАК преобразовать его!
-        //таким образом мы увидим  изменения
+        //*
         setInterval(() => {
             console.log(" Tik: " + counter);
             setCounter(state => state + 1)
@@ -87,12 +79,61 @@ export const SetIntervalExample = () => {
     </>
 }
 
+//*
+//тут вообще функция даже не вызывается целиком , setInterval запустился единожды
+// а setCounter берет из замыкания тот  counter который был в самый 1 раз - а там была 1
+//и он работает с 1 вызовом функции SetIntervalExample(), в counter сидит 1
+// и при каждом ТИКЕ берет 1 , а 1 + 1 =2 и отправляет в  state , далее в counter типа 2 он отрисовывает единожды
+// и useEffect больше не регистрируется тк зависимостей нет, но в counter была единичка и он забирает ее и сетает 2
+// соответственно и перерисовка не происходит и setInterval берет значение из замыкания , а ему нужно свежее значение -
+// а мы можем передать преобразователь которая говорит не конкретное значение на тебе а КАК преобразовать его!
+//таким образом мы увидим  изменения
 
 
+export const ResetEffectExample = () => { // эта компонента будет вызываться при каждом изменении counter
+    const [counter, setCounter] = useState(1)
+
+    console.log("component rendered with " + counter);
+
+    useEffect(() => {
+        console.log('Effect occurred ' + counter)
+        //сбрасываем эффект
+        return () => {
+            console.log('reset effect ' + counter)
+        }
+    }, [counter]);
+
+    const increase = () => setCounter(counter + 1) // ф-ция будет создаваться при каждом изменений counter
+
+    return <>
+        Hello, counter: {counter}
+        <button onClick={increase}>click</button>
+    </>
+}
 
 
+export const KeysTrackerExample = () => { // эта компонента будет вызываться при каждом изменении counter
+    const [text, setText] = useState('')
 
+    console.log("component rendered with " + text);
 
+    useEffect(() => {
+        const handler = (e: KeyboardEvent) => {
+            console.log(e.key)
+            setText(text => e.key)
+        }
+
+        window.addEventListener("keypress", handler)
+
+        return () => {
+            window.removeEventListener('keypress', (handler))
+        }
+    }, [text]);
+
+    return <>
+        Typed text: {text}
+    </>
+}
 
 
 
