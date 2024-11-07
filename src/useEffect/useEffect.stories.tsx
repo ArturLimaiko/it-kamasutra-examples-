@@ -136,7 +136,27 @@ export const KeysTrackerExample = () => { // эта компонента буд�
 }
 
 
+export const SetIntervalExample1 = () => { // эта компонента будет вызываться при каждом изменении counter
+    const [text, setText] = useState('')
 
+    console.log("component rendered with " + text);
 
+    useEffect(() => {
+        const intervalId = setTimeout(() => {
+            console.log('TIMEOUT')
+            setText('3 seconds passed')
+        }, 3000)
+
+        return () => {
+            console.log('component unmount')
+            clearInterval(intervalId);
+        }
+
+    }, [text])
+
+    return <>
+        Typed text: {text}
+    </>
+}
 
 
