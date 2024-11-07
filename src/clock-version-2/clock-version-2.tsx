@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import { AnalogClockView } from './AnalogClockView';
+import {DigitalClockView} from "./DigitalClockView";
 
-type PropsType = {}
-
-const get2digitsString = (num: number) => num < 10 ? `0` + num : num
+type PropsType = { mode?: 'digital' | 'analog' }
+export type ClockViewPropsType = { date: Date }
 
 export const ClockVersion2: React.FC<PropsType> = (props) => {
     const [date, setDate] = useState(new Date())
@@ -15,11 +16,19 @@ export const ClockVersion2: React.FC<PropsType> = (props) => {
         return (() => clearInterval(intervalId))// Очистка интервала при размонтировании компонента
     }, []) // что бы отработал какой то эффект 1 раз то передадим пустой массив
 
+    let view;
+
+    switch (props.mode) {
+        case 'analog':
+            view = <AnalogClockView date={date} />
+            break;
+        case 'digital':
+        default:
+            view = <DigitalClockView date={date} />
+    }
     return (
         <div>
-            <span>{get2digitsString(date.getHours())}</span>:
-            <span>{get2digitsString(date.getMinutes())}</span>:
-            <span>{get2digitsString(date.getSeconds())}</span>
+            {view}
         </div>
     )
 }

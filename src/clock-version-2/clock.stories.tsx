@@ -6,8 +6,14 @@ export default {
     component: ClockVersion2,
 }
 
-export const ClockExample = () => {
+export const ClockExampleAnalog = () => {
     return (
-        <ClockVersion2/>
+        <ClockVersion2 mode={'analog'}/>
+    )
+}
+
+export const ClockExampleDigital = () => {
+    return (
+        <ClockVersion2 mode={'digital'}/>
     )
 }
